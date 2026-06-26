@@ -1,0 +1,395 @@
+:root {
+  --color-background: #f7f3ec;
+  --color-surface: #ffffff;
+  --color-text: #24332d;
+  --color-accent: #4f8f79;
+  --color-highlight: #f2b66d;
+  --color-muted: #65736d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+header,
+main {
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
+}
+
+header {
+  padding-block: 1.5rem;
+}
+
+header h1 {
+  margin: 0;
+  color: var(--color-accent);
+  font-size: 1.6rem;
+}
+
+header p {
+  margin: 0.25rem 0 0;
+  color: var(--color-muted);
+}
+
+main section {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: 4rem;
+}
+
+main h2 {
+  max-width: 12ch;
+  margin: 0 0 1rem;
+  font-size: clamp(2.25rem, 9vw, 4.5rem);
+  line-height: 1.05;
+}
+
+main p {
+  max-width: 34rem;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 1.05rem;
+}
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo {
+  color: var(--color-accent);
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav {
+  display: none;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.emergency-button {
+  padding: 0.65rem 1rem;
+  border-radius: 2rem;
+  background-color: var(--color-highlight);
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (min-width: 48rem) {
+  nav {
+    display: flex;
+  }
+}
+
+.eyebrow {
+  margin-bottom: 0.75rem;
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-description {
+  margin-bottom: 1.75rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.primary-button,
+.secondary-button {
+  padding: 0.8rem 1.25rem;
+  border-radius: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.primary-button {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+.secondary-button {
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+}
+
+@media (min-width: 36rem) {
+  .hero-actions {
+    flex-direction: row;
+  }
+}
+
+.care-section {
+  min-height: auto;
+  padding-block: 5rem;
+}
+
+.section-heading {
+  margin-bottom: 2rem;
+}
+
+.section-heading h2 {
+  max-width: 14ch;
+  font-size: clamp(2rem, 7vw, 3.5rem);
+}
+
+.care-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.care-card {
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  background-color: var(--color-surface);
+}
+
+.care-icon {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.care-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.care-card p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+@media (min-width: 48rem) {
+  .care-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.glide__slide {
+  height: auto;
+}
+
+.glide__slide .care-card {
+  height: 100%;
+}
+
+.glide-controls {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.glide-button {
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--color-accent);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.glide-button:hover {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+.clinic-section {
+  min-height: auto;
+  padding-block: 5rem;
+}
+
+#clinic-map {
+  width: 100%;
+  height: 24rem;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background-color: var(--color-surface);
+}
+
+.resource-section {
+  min-height: auto;
+  padding-block: 5rem;
+}
+
+.pet-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.pet-gallery a {
+  display: block;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background-color: var(--color-surface);
+}
+
+.pet-gallery img {
+  display: block;
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.pet-gallery a:hover img {
+  transform: scale(1.04);
+}
+
+@media (min-width: 40rem) {
+  .pet-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 47.99rem) {
+  main section {
+    min-height: auto;
+  }
+
+  .hero {
+    padding-block: 6rem 4rem;
+  }
+
+  .care-section,
+  .clinic-section,
+  .resource-section {
+    padding-block: 4rem;
+  }
+}
+
+@media (max-width: 47.99rem) {
+  .clinic-section,
+  .resource-section {
+    padding-block: 3rem;
+  }
+}
+
+.site-footer {
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
+  padding-block: 3rem;
+  border-top: 1px solid rgb(36 51 45 / 15%);
+  display: grid;
+  gap: 2rem;
+}
+
+.footer-logo {
+  color: var(--color-accent);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-footer p {
+  max-width: 30rem;
+  margin: 0.75rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.footer-libraries {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-libraries p {
+  width: 100%;
+  margin: 0;
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.footer-libraries span {
+  padding: 0.4rem 0.75rem;
+  border-radius: 2rem;
+  background-color: var(--color-surface);
+  color: var(--color-muted);
+  font-size: 0.8rem;
+}
+
+@media (min-width: 48rem) {
+  .site-footer {
+    grid-template-columns: 1fr auto;
+    align-items: end;
+  }
+
+  .footer-libraries {
+    justify-content: flex-end;
+  }
+
+  .footer-libraries p {
+    text-align: right;
+  }
+}
+
+.emergency-section {
+  min-height: auto;
+  padding-block: 5rem;
+}
+
+.emergency-content {
+  padding: 2rem;
+  border-radius: 1.5rem;
+  background-color: #fff1df;
+  border: 1px solid rgb(242 182 109 / 45%);
+}
+
+.emergency-content h2 {
+  max-width: 16ch;
+  font-size: clamp(2rem, 7vw, 3.5rem);
+}
+
+.emergency-note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.emergency-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.25rem;
+  border-radius: 2rem;
+  background-color: var(--color-highlight);
+  color: var(--color-text);
+  font-weight: 700;
+  text-decoration: none;
+}

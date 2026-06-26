@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>BebePaw | Pet Health Support</title>
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.7.1/dist/css/glide.core.min.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.min.css"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!--
+    Third-party JavaScript libraries used:
+    1. Glide.js – care guide carousel
+    2. AOS – scroll-triggered animations
+    3. Leaflet – interactive veterinary clinic map
+    4. Lightbox2 – pet health image gallery
+  -->
+
+  <header class="site-header">
+    <a class="logo" href="#">BebePaw</a>
+
+    <nav aria-label="Main navigation">
+      <a href="#care">Care Guide</a>
+      <a href="#clinics">Clinics</a>
+      <a href="#resources">Resources</a>
+    </nav>
+
+    <a class="emergency-button" href="#emergency">
+      Emergency Help
+    </a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div data-aos="fade-up">
+        <p class="eyebrow">Care for every paw</p>
+
+        <h2>Pet health support, when you need it</h2>
+
+        <p class="hero-description">
+          Explore trusted care information, emergency guidance,
+          and helpful resources for your pet.
+        </p>
+
+        <div class="hero-actions">
+          <a class="primary-button" href="#care">
+            Explore Care Guide
+          </a>
+
+          <a class="secondary-button" href="#emergency">
+            Emergency Guidance
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="emergency-section" id="emergency">
+      <div class="emergency-content" data-aos="fade-up">
+        <p class="eyebrow">Urgent support</p>
+
+        <h2>Know when to seek immediate care</h2>
+
+        <p>
+          Contact a veterinarian or emergency animal hospital if your pet
+          shows severe breathing difficulty, loss of consciousness,
+          uncontrolled bleeding, repeated seizures, or suspected poisoning.
+        </p>
+
+        <p class="emergency-note">
+          This website provides general educational information and does not
+          replace professional veterinary advice.
+        </p>
+
+        <a class="emergency-link" href="#clinics">
+          View nearby clinics
+        </a>
+      </div>
+    </section>
+
+    <section class="care-section" id="care">
+      <div class="section-heading" data-aos="fade-up">
+        <p class="eyebrow">Everyday support</p>
+
+        <h2>Start with the right care</h2>
+
+        <p>
+          Browse simple guidance for common pet health concerns
+          and everyday care.
+        </p>
+      </div>
+
+      <div class="glide" data-aos="fade-up" data-aos-delay="150">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <article class="care-card">
+                <span class="care-icon">🐾</span>
+
+                <h3>Daily Wellness</h3>
+
+                <p>
+                  Learn about feeding, grooming, exercise,
+                  and preventative care.
+                </p>
+              </article>
+            </li>
+
+            <li class="glide__slide">
+              <article class="care-card">
+                <span class="care-icon">🩺</span>
+
+                <h3>Common Symptoms</h3>
+
+                <p>
+                  Review basic information about changes in appetite,
+                  energy, and behaviour.
+                </p>
+              </article>
+            </li>
+
+            <li class="glide__slide">
+              <article class="care-card">
+                <span class="care-icon">🚨</span>
+
+                <h3>Urgent Warning Signs</h3>
+
+                <p>
+                  Recognize symptoms that may require immediate
+                  veterinary attention.
+                </p>
+              </article>
+            </li>
+          </ul>
+        </div>
+
+        <div class="glide-controls" data-glide-el="controls">
+          <button
+            class="glide-button"
+            type="button"
+            data-glide-dir="<"
+            aria-label="Previous care topic"
+          >
+            ←
+          </button>
+
+          <button
+            class="glide-button"
+            type="button"
+            data-glide-dir=">"
+            aria-label="Next care topic"
+          >
+            →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="clinic-section" id="clinics">
+      <div class="section-heading" data-aos="fade-up">
+        <p class="eyebrow">Nearby support</p>
+
+        <h2>Find veterinary care</h2>
+
+        <p>
+          Explore veterinary clinics and emergency animal hospitals
+          around Toronto.
+        </p>
+      </div>
+
+      <div
+        id="clinic-map"
+        data-aos="fade-up"
+        data-aos-delay="150"
+      ></div>
+    </section>
+
+    <section class="resource-section" id="resources">
+      <div class="section-heading" data-aos="fade-up">
+        <p class="eyebrow">Pet care moments</p>
+
+        <h2>Health and wellness gallery</h2>
+
+        <p>
+          Explore everyday moments that support healthier and
+          happier pets.
+        </p>
+      </div>
+
+      <div class="pet-gallery">
+        <a
+          href="images/pet-checkup.jpeg"
+          data-lightbox="pet-health-gallery"
+          data-title="A routine veterinary checkup"
+          data-aos="fade-up"
+        >
+          <img
+            src="images/pet-checkup.jpeg"
+            alt="Pet receiving a routine veterinary checkup"
+          >
+        </a>
+
+        <a
+          href="images/healthy-dog.jpeg"
+          data-lightbox="pet-health-gallery"
+          data-title="Daily activity supports a dog's wellbeing"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <img
+            src="images/healthy-dog.jpeg"
+            alt="Healthy dog enjoying daily activity"
+          >
+        </a>
+
+        <a
+          href="images/healthy-cat.jpeg"
+          data-lightbox="pet-health-gallery"
+          data-title="Comfort and observation are part of everyday cat care"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <img
+            src="images/healthy-cat.jpeg"
+            alt="Healthy cat resting comfortably"
+          >
+        </a>
+
+        <a
+          href="images/pet-care.jpeg"
+          data-lightbox="pet-health-gallery"
+          data-title="Consistent care helps pets feel safe and supported"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <img
+            src="images/pet-care.jpeg"
+            alt="Pet owner providing gentle everyday care"
+          >
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <a class="footer-logo" href="#">BebePaw</a>
+
+      <p>
+        A student web project exploring accessible pet health
+        support and interactive JavaScript libraries.
+      </p>
+    </div>
+
+    <div class="footer-libraries">
+      <p>Libraries used</p>
+
+      <span>Glide.js</span>
+      <span>AOS</span>
+      <span>Leaflet</span>
+      <span>Lightbox2</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.7.1/dist/glide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox-plus-jquery.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
